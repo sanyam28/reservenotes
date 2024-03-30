@@ -28,7 +28,7 @@ const EditNote = ({ note, userid }) => {
     e.preventDefault()
     const _id = note._id
     const data = { _id, title, body, userid }
-    let res = await fetch(`http://localhost:3000/api/notes/update`, {
+    let res = await fetch(`${process.env.NEXT_BASE_PUBLIC_URL}/api/notes/update`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
